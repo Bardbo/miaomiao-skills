@@ -1,7 +1,7 @@
 # WeChat SVG Interactive Components · 公众号 SVG 交互组件
 
 <p align="center">
-  <a href="../README.zh.md">🇨🇳 中文</a> · <a href="#readme">🇬🇧 English</a>
+  <a href="../README.md">🇨🇳 中文</a> · <a href="#readme">🇬🇧 English</a>
 </p>
 
 Generate interactive SVG animations for WeChat Official Account (公众号) articles. Click-to-reveal, card flips, scratch cards, progress bars, sequence animations, and more — all pure SVG, no JavaScript required.

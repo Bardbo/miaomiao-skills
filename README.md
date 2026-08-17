@@ -1,26 +1,26 @@
-# WeChat SVG Interactive Components
+# 喵喵技能包 (Miaomiao Skills)
 
-[中文](./README.zh.md)
+[English](./README.en.md)
 
-A collection of Hermes AI agent skills focused on WeChat Official Account (公众号) content creation, with a special focus on SVG interactive components.
+一个为 Hermes AI Agent 打造的技能合集，专注于微信公众号内容创作，尤其是 SVG 交互组件。
 
-## Skills Included
+## 包含技能
 
-| Skill | Description |
-|-------|-------------|
-| [wechat-svg](./skills/wechat-svg/) | Generate interactive SVG animations for WeChat articles — click-to-reveal, card flips, scratch cards, progress bars, sequence animations, and more |
-| [wechat-featured-list](./skills/wechat-featured-list/) | Generate "Featured Articles" card wall at the bottom of WeChat articles — 3×3 grid with auto-scrolling, staggered rows, cover images, and rounded corners |
-| [wechat-chat-simulator](./skills/wechat-chat-simulator/) | Convert dialogue markdown into WeChat chat simulator HTML pages |
-| [travel-plan-html](./skills/travel-plan-html/) | Generate travel plan HTML pages with real-time price queries |
-| [tavern-rp](./skills/tavern-rp/) | Load SillyTavern character cards for role-playing in Hermes |
-| [talk](./skills/talk/) | Simulate immersive multi-character dialogue with persona management |
-| [smart-pick](./skills/smart-pick/) | Multi-option comparison assistant with dynamic weight generation |
-| [skill-curator](./skills/skill-curator/) | Comprehensive skill management and continuous improvement system |
+| 技能 | 说明 |
+|------|------|
+| [wechat-svg](./skills/wechat-svg/) | 为公众号文章生成可交互的 SVG 动画——点击揭秘、翻牌卡片、刮刮卡、进度条、序列帧动画等 |
+| [wechat-featured-list](./skills/wechat-featured-list/) | 生成公众号文章底部「往期精选」卡片墙——3×3 网格、自动错开滚动、封面图、圆角卡片 |
+| [wechat-chat-simulator](./skills/wechat-chat-simulator/) | 将对话 Markdown 渲染为微信聊天模拟器 HTML 页面 |
+| [travel-plan-html](./skills/travel-plan-html/) | 生成带实时价格查询的旅行计划 HTML 页面 |
+| [tavern-rp](./skills/tavern-rp/) | 在 Hermes 中加载 SillyTavern 角色卡进行角色扮演 |
+| [talk](./skills/talk/) | 模拟沉浸式多角色对话，带人格管理 |
+| [smart-pick](./skills/smart-pick/) | 通用多方案权衡助手，支持动态权重生成 |
+| [skill-curator](./skills/skill-curator/) | 综合技能管理与持续改进系统 |
 
-## Usage
+## 使用方法
 
-Each skill is a standalone Hermes agent skill. Copy the skill directory to your Hermes skills folder, or use the `skill_manage` tool to install it.
+每个技能都是独立的 Hermes agent 技能。将技能目录复制到你的 Hermes 技能文件夹，或使用 `skill_manage` 工具安装。
 
-## About
+## 关于
 
-Built with [Hermes Agent](https://hermes-agent.nousresearch.com) by [Bardbo](https://github.com/Bardbo).
+由 [Bardbo](https://github.com/Bardbo) 基于 [Hermes Agent](https://hermes-agent.nousresearch.com) 构建。

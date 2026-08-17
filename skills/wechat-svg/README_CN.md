@@ -1,7 +1,7 @@
 # 公众号 SVG 交互组件
 
 <p align="center">
-  <a href="../README.zh.md">🇨🇳 中文</a> · <a href="README.md">🇬🇧 English</a>
+  <a href="../README.md">🇨🇳 中文</a> · <a href="README.md">🇬🇧 English</a>
 </p>
 
 为公众号文章生成可交互的 SVG 动画组件。点击揭秘、翻牌卡片、刮刮卡、进度条、序列帧动画、错层滑动等，全部纯 SVG 实现，不需要 JavaScript。
