@@ -116,7 +116,7 @@ agent 内部一次性生成完整对话。提供最终完整文本，然后进�
 import json, requests, yaml, re, time
 
 # ===== 配置（自动从 Hermes config 读取）=====
-config = yaml.safe_load(open('C:/Users/Administrator/AppData/Local/hermes/config.yaml'))
+config = yaml.safe_load(open('config.yaml'))
 API_KEY=config['model']['api_key']
 BASE_URL = config['model']['base_url'].rstrip('/')
 MODEL = "deepseek-v4-flash"  # 替换为当前模型

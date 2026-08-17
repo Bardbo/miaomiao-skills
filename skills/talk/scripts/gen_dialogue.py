@@ -5,12 +5,12 @@
 
 import json, requests, yaml, re, time
 
-config = yaml.safe_load(open('C:/Users/Administrator/AppData/Local/hermes/config.yaml'))
+config = yaml.safe_load(open('config.yaml'))
 api_key = config['model']['api_key']
 base_url = config['model']['base_url'].rstrip('/')
 model = "deepseek-v4-flash"
 
-OUTPUT = "C:/Users/Administrator/Desktop/巴菲特与芒格谈赚钱的思维模式.md"
+OUTPUT = "output.md"
 
 SCENES = [
     {
