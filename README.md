@@ -8,6 +8,7 @@
 
 | 技能 | 说明 | SKILL.md |
 |------|------|----------|
+| [wechat-featured-list](./skills/wechat-featured-list/) | 公众号往期精选卡片墙——丢链接自动抓标题封面，3×3 圆角卡片，三行错开摆动 | ✅ |
 | [wechat-svg](./skills/wechat-svg/) | 公众号 SVG 交互组件——砸金蛋、翻牌、刮刮卡、进度条、序列帧、错层滑动等 | ✅ |
 | [wechat-chat-simulator](./skills/wechat-chat-simulator/) | 将对话 Markdown 渲染为微信聊天模拟器 HTML 页面 | ✅ |
 | [travel-plan-html](./skills/travel-plan-html/) | 生成带实时价格查询的旅行计划 HTML 页面 | ✅ |
@@ -23,6 +24,7 @@ miaomiao-skills/
 ├── README.md              ← 中文文档（默认展示）
 ├── README.en.md           ← 英文文档
 └── skills/
+    ├── wechat-featured-list/  往期精选卡片墙
     ├── wechat-svg/            公众号 SVG 交互
     ├── wechat-chat-simulator/ 微信聊天模拟器
     ├── travel-plan-html/      旅行计划 HTML

@@ -8,6 +8,7 @@
 
 | Skill | Description | SKILL.md |
 |-------|-------------|----------|
+| [wechat-featured-list](./skills/wechat-featured-list/) | Featured articles card wall — drop links, auto-fetch titles & covers, 3×3 rounded cards with staggered sway | ✅ |
 | [wechat-svg](./skills/wechat-svg/) | Interactive SVG components for WeChat articles — gold egg smash, card flip, scratch card, progress bar, sequence animation, slide layer | ✅ |
 | [wechat-chat-simulator](./skills/wechat-chat-simulator/) | Convert dialogue markdown into WeChat-style chat simulator HTML pages | ✅ |
 | [travel-plan-html](./skills/travel-plan-html/) | Generate travel plan HTML pages with real-time price queries | ✅ |
@@ -23,6 +24,7 @@ miaomiao-skills/
 ├── README.md              ← Chinese (default)
 ├── README.en.md           ← English
 └── skills/
+    ├── wechat-featured-list/   Featured card wall
     ├── wechat-svg/            WeChat SVG interactive components
     ├── wechat-chat-simulator/ WeChat chat simulator
     ├── travel-plan-html/      Travel plan HTML
