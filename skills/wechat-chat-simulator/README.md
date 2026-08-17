@@ -12,9 +12,9 @@
 
 本技能的设计参考了以下项目/技能的方法论：
 
-- **[huashu-nuwa](https://github.com/Bardbo/skill-curator)** — 技能蒸馏与创建框架，为角色构建提供了人格提取的底层思路
-- **[darwin-skill](https://github.com/Bardbo/skill-curator)** — 9 维评分体系的评估方法论，用于持续优化渲染质量
-- **[talk](https://github.com/Bardbo/skill-curator/tree/main/talk)** — 多角色对话生成技能，本技能是 talk 的下游渲染端
+- **[huashu-nuwa](https://github.com/Bardbo/miaomiao-skills)** — 技能蒸馏与创建框架，为角色构建提供了人格提取的底层思路
+- **[darwin-skill](https://github.com/Bardbo/miaomiao-skills)** — 9 维评分体系的评估方法论，用于持续优化渲染质量
+- **[talk](https://github.com/Bardbo/miaomiao-skills/tree/main/talk)** — 多角色对话生成技能，本技能是 talk 的下游渲染端
 
 ## 功能
 

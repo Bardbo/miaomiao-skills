@@ -12,9 +12,9 @@
 
 本技能的设计参考了以下项目/技能的方法论：
 
-- **[huashu-nuwa](https://github.com/Bardbo/skill-curator)** — 技能蒸馏与创建框架。`talk` 的角色构建流程（本地技能 → 仓库搜索 → nuwa 蒸馏 → Fallback）直接继承自 nuwa 的源材料分析思路
-- **[darwin-skill](https://github.com/Bardbo/skill-curator)** — 9 维评分体系，用于持续评估对话神似度与质量改进
-- **[skill-curator](https://github.com/Bardbo/skill-curator)** — 综合技能管理系统，为 talk 提供了技能生命周期管理的参考
+- **[huashu-nuwa](https://github.com/Bardbo/miaomiao-skills)** — 技能蒸馏与创建框架。`talk` 的角色构建流程（本地技能 → 仓库搜索 → nuwa 蒸馏 → Fallback）直接继承自 nuwa 的源材料分析思路
+- **[darwin-skill](https://github.com/Bardbo/miaomiao-skills)** — 9 维评分体系，用于持续评估对话神似度与质量改进
+- **[skill-curator](https://github.com/Bardbo/miaomiao-skills)** — 综合技能管理系统，为 talk 提供了技能生命周期管理的参考
 - **[openai-adapter / opencli](https://github.com/OpenInterpreter/open-interpreter)** — 工具调用的接口设计模式，影响了 talk 的 agent 驱动执行流程
 
 ## 核心原则

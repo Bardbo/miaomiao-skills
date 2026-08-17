@@ -1,41 +1,41 @@
-# WeChat Featured Articles Card Wall · 公众号往期精选卡片墙
+# 公众号往期精选卡片墙 · WeChat Featured Articles Card Wall
 
 <p align="center">
-  <a href="#readme">🇬🇧 English</a> · <a href="./README_CN.md">🇨🇳 中文</a>
+  <a href="#readme">🇨🇳 中文</a> · <a href="README_EN.md">🇬🇧 English</a>
 </p>
 
-Generate a "Featured Articles" card wall at the bottom of your WeChat Official Account articles. Drop in article links, and the script automatically fetches titles and cover images, arranging them into a 3×3 rounded-corner card wall with staggered scrolling rows on a white background.
+生成公众号文章底部的「往期精选」卡片墙。你把文章链接丢进去，脚本自动抓标题和封面，排成 3×3 圆角卡片墙，三行错开小幅摆动，白底适配公众号编辑器。
 
-## Features
+## 功能
 
-- Auto-fetch titles (`og:title`) and cover images (`og:image`) from links
-- 3 rows × 3 columns = 9 articles, taking the last 9 entries from config (append new links at the end)
-- Each row sways ±26px with different phases — a staggered, natural dynamic feel
-- CSS `border-radius` truly clips corners; no square pixels leak through
-- Smart title wrapping: short titles stay one line, long titles wrap to two (preferring punctuation breaks)
-- Semi-transparent black bar at card bottom keeps white titles readable on any cover
-- Fetch results cached to `featured_cache.json`; repeat runs make no network requests
-- White background matching the WeChat editor's default
+- 自动抓取链接的标题（og:title）和封面图（og:image）
+- 3 行 × 3 列共 9 篇，取配置里最后 9 篇（新链接往后加）
+- 三行各自 ±26px 错开摆动，相位不同，动起来错落有致
+- CSS border-radius 真正裁剪圆角，方形像素不会漏出
+- 标题智能换行：短标题单行，长标题拆两行（优先在标点后断开）
+- 底部半透明黑条保证白色标题在任何封面图上可读
+- 抓取结果缓存到 featured_cache.json，重复运行不重新请求
+- 白底，与公众号编辑器默认底色一致
 
-## Usage
+## 使用
 
 ```bash
-# 1. Configure your links (JSON)
-# Create featured_config.json:
+# 1. 配置链接（JSON）
+# 新建 featured_config.json：
 # {"title": "往期精选", "urls": ["https://mp.weixin.qq.com/s/xxx", ...]}
 
-# 2. Generate standalone HTML
+# 2. 生成独立 HTML
 python scripts/gen_featured.py featured_config.json featured_list.html
 
-# Or append directly to your article HTML
+# 或直接追加到文章 HTML 末尾
 python scripts/gen_featured.py featured_config.json --append article.html
 ```
 
-## Security
+## 安全
 
-- Only fetches short links (`https://mp.weixin.qq.com/s/xxx`)
-- Long tracking links (with `?__biz=` parameters) are skipped to avoid WeChat anti-crawling measures
-- Local HTML files use their filenames as titles; no network requests made
+- 只爬短链接（https://mp.weixin.qq.com/s/xxx）
+- 长链接（带 ?__biz= 等参数的分享追踪链接）跳过不抓，避免微信风控
+- 本地 HTML 文件直接用文件名当标题，不发网络请求
 
 ## About
 

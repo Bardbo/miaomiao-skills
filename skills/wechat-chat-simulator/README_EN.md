@@ -12,9 +12,9 @@ Convert dialogue-style Markdown (e.g. output from the `talk` skill) into a stand
 
 This skill's design references the following projects/skills:
 
-- **[huashu-nuwa](https://github.com/Bardbo/skill-curator)** — Skill distillation and creation framework, providing the underlying approach for persona extraction
-- **[darwin-skill](https://github.com/Bardbo/skill-curator)** — 9-dimension evaluation methodology, used for continuous rendering quality optimization
-- **[talk](https://github.com/Bardbo/skill-curator/tree/main/talk)** — Multi-character dialogue generation skill; this skill is the downstream rendering companion to talk
+- **[huashu-nuwa](https://github.com/Bardbo/miaomiao-skills)** — Skill distillation and creation framework, providing the underlying approach for persona extraction
+- **[darwin-skill](https://github.com/Bardbo/miaomiao-skills)** — 9-dimension evaluation methodology, used for continuous rendering quality optimization
+- **[talk](https://github.com/Bardbo/miaomiao-skills/tree/main/talk)** — Multi-character dialogue generation skill; this skill is the downstream rendering companion to talk
 
 ## Features
 

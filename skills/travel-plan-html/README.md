@@ -2,8 +2,8 @@
 
 > **根据用户输入的旅行需求，自动生成带飞猪实时价格、天气预报、小红书灵感和高德地图的完整 HTML 旅行规划文件。**
 
-[![version](https://img.shields.io/badge/version-2.1.0-green)](https://github.com/Bardbo/travel-plan-html)
-[![license](https://img.shields.io/badge/license-MIT-blue)](https://github.com/Bardbo/travel-plan-html)
+[![version](https://img.shields.io/badge/version-2.1.0-green)](https://github.com/Bardbo/miaomiao-skills)
+[![license](https://img.shields.io/badge/license-MIT-blue)](https://github.com/Bardbo/miaomiao-skills)
 [![English](https://img.shields.io/badge/lang-English-blue)](README_EN.md)
 
 ## 简介

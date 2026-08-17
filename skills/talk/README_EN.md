@@ -12,9 +12,9 @@ Simulate immersive dialogue between 2+ characters. The Agent follows documented 
 
 This skill's design references the following projects/skills:
 
-- **[huashu-nuwa](https://github.com/Bardbo/skill-curator)** — Skill distillation and creation framework. Talk's persona construction pipeline (local skills → repo search → nuwa distillation → Fallback build) directly inherits from nuwa's source material analysis approach.
-- **[darwin-skill](https://github.com/Bardbo/skill-curator)** — 9-dimension evaluation methodology, used for continuous dialogue faithfulness assessment.
-- **[skill-curator](https://github.com/Bardbo/skill-curator)** — Comprehensive skill management system, providing lifecycle management reference for talk.
+- **[huashu-nuwa](https://github.com/Bardbo/miaomiao-skills)** — Skill distillation and creation framework. Talk's persona construction pipeline (local skills → repo search → nuwa distillation → Fallback build) directly inherits from nuwa's source material analysis approach.
+- **[darwin-skill](https://github.com/Bardbo/miaomiao-skills)** — 9-dimension evaluation methodology, used for continuous dialogue faithfulness assessment.
+- **[skill-curator](https://github.com/Bardbo/miaomiao-skills)** — Comprehensive skill management system, providing lifecycle management reference for talk.
 - **[openai-adapter / opencli](https://github.com/OpenInterpreter/open-interpreter)** — Tool invocation interface design patterns that influenced talk's agent-driven execution flow.
 
 ## Core Principles

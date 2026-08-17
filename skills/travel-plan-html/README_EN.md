@@ -2,8 +2,8 @@
 
 > **Generate beautiful, interactive HTML travel plans with real-time flight/hotel data from Fliggy, weather forecasts, Xiaohongshu travel inspiration, and AMap visualizations.**
 
-[![version](https://img.shields.io/badge/version-2.1.0-green)](https://github.com/Bardbo/travel-plan-html)
-[![license](https://img.shields.io/badge/license-MIT-blue)](https://github.com/Bardbo/travel-plan-html)
+[![version](https://img.shields.io/badge/version-2.1.0-green)](https://github.com/Bardbo/miaomiao-skills)
+[![license](https://img.shields.io/badge/license-MIT-blue)](https://github.com/Bardbo/miaomiao-skills)
 [![中文 README](https://img.shields.io/badge/lang-中文-green)](README.md)
 
 ## Overview
