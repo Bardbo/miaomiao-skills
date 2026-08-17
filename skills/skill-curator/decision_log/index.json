@@ -1,0 +1,35 @@
+{
+  "schema_version": "2.0.0",
+  "description": "Persistent Decision History 汇总索引。所有技能修改的四元组记录在此索引，详细记录见各技能独立 JSON 文件。",
+  "last_updated": "2026-06-15",
+  "entries": [
+    {
+      "id": "20260615-kb-maintenance-001",
+      "skill": "skill-curator",
+      "diagnosis": "知识库（含技能库）缺少结构化技能评估页面。已基线评分的 3 个关键技能（wechat-article-formatting/tiaoman-creation/shui-bing-yue-perspective）和 1 个技能对比（baoyu-image-gen vs agnes-ai-integration）均未在 Obsidian vault 中存档评估结果。gbrain 上次同步为 6 月 3 日，需刷新。",
+      "candidates": [
+        "方案A：按 llm-wiki.skill §8.2 流程，在 概念/ 下创建技能评估页 + 对比页，更新首页和日志，同步到 gbrain",
+        "方案B：仅在 SKILL.md 内部记录，不同步到 vault",
+        "方案C：使用独立文件夹 技能评估/ 而非 概念/"
+      ],
+      "evidence": {
+        "evaluator": "skill-curator §8.2 + llm-wiki.skill 架构",
+        "test_prompt": "检查 vault 首页/概念/比较/日志/gbrain stats 现状",
+        "baseline_state": "首页: 无技能评估索引; 概念/: 2页; 比较/: 空; 日志: 停更于6月3日; gbrain: 1559 pages, 全部嵌入",
+        "candidate_scores": {
+          "方案A": "最佳（对齐现有 llm-wiki 中文架构，首页/日志/概念/比较 四个入口同步更新，gbrain 增量同步）",
+          "方案B": "差（知识库与 skill 实际评估脱钩，§8.2 的跨会话价值丧失）",
+          "方案C": "可接受但不一致（架构.md 规定所有概念在 概念/ 下，分离目录破环一致性）"
+        }
+      },
+      "result": "采用方案A。创建 3 个技能评估页（概念/）、1 个对比页（比较/）、更新首页.md 索引和页面数、追加日志.md 条目。gbrain sync 成功增量导入 22 pages + 134 chunks，嵌入 100%。vault 5 个入口文件全部同步更新。",
+      "timestamp": "2026-06-15",
+      "executed_by": "Hermes Agent (deepseek-v4-flash)"
+    }
+  ],
+  "stats": {
+    "total_decisions": 1,
+    "skills_with_history": ["skill-curator"],
+    "latest_decision": "2026-06-15 知识库整理（含 gbrain 同步）"
+  }
+}

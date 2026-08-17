@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Simulator</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Microsoft YaHei", sans-serif;
+            background-color: #f5f5f5;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 20px;
+        }
+        .avatar { cursor: pointer; }
+        .chat-wrapper { width: 100%; max-width: 430px; }
+        .toolbar { display: flex; gap: 8px; margin-bottom: 12px; justify-content: flex-end; }
+        .toolbar button { padding: 8px 16px; border: none; border-radius: 6px; font-size: 14px; cursor: pointer; font-family: inherit; }
+        .btn-export { background-color: #07c160; color: white; }
+        .btn-export:hover { background-color: #06ad56; }
+        .chat-app {
+            width: 100%; background-color: #ededed; display: flex; flex-direction: column;
+            position: relative; box-shadow: 0 0 20px rgba(0,0,0,0.1); border-radius: 12px; overflow: hidden;
+        }
+        .header {
+            background-color: #07c160; color: white; padding: 12px 16px;
+            display: flex; justify-content: space-between; align-items: center; flex-shrink: 0;
+        }
+        .header-title { font-size: 18px; font-weight: 500; letter-spacing: 1px; }
+        .header-action {
+            font-size: 14px; cursor: pointer; padding: 4px 8px;
+            border-radius: 4px; transition: background-color 0.2s; user-select: none;
+        }
+        .header-action:hover { background-color: rgba(255,255,255,0.2); }
+        .group-info {
+            font-size: 12px; color: rgba(255,255,255,0.8); text-align: center;
+            padding: 4px 16px; background-color: #07c160; border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        .chat-area {
+            padding: 16px;
+            display: flex; flex-direction: column; gap: 16px; background-color: #ededed;
+        }
+        .timestamp { text-align: center; color: #999; font-size: 12px; margin: 8px 0; }
+        .message-row {
+            display: flex; align-items: flex-start; gap: 10px;
+        }
+        .avatar {
+            width: 40px; height: 40px; border-radius: 6px; object-fit: cover;
+            flex-shrink: 0; background-color: #ddd;
+        }
+        .message-content {
+            max-width: 70%; display: flex; flex-direction: column; gap: 2px;
+        }
+        .sender-name { font-size: 12px; color: #999; padding-left: 2px; }
+        .message-bubble {
+            padding: 10px 14px; border-radius: 6px;
+            font-size: 15px; line-height: 1.5; word-wrap: break-word;
+            position: relative; box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+            background-color: #fff; color: #000;
+        }
+        .message-bubble::after {
+            content: ''; position: absolute; left: -6px; top: 14px;
+            width: 0; height: 0; border: 6px solid transparent;
+            border-right-color: #fff; border-left: 0;
+        }
+        .input-area {
+            background-color: #f7f7f7; border-top: 1px solid #e5e5e5;
+            padding: 10px 12px; display: flex; align-items: center;
+            gap: 10px; flex-shrink: 0;
+        }
+        .input-wrapper {
+            flex: 1; background-color: #fff; border-radius: 6px;
+            padding: 8px 12px; display: flex; align-items: center;
+        }
+        .message-input {
+            width: 100%; border: none; outline: none; font-size: 15px;
+            background: transparent; font-family: inherit;
+        }
+        .message-input::placeholder { color: #c2c2c2; }
+        .send-btn {
+            background-color: #07c160; color: white; border: none;
+            padding: 8px 20px; border-radius: 6px; font-size: 15px;
+            cursor: pointer; transition: background-color 0.2s; font-family: inherit;
+        }
+        .send-btn:hover { background-color: #06ad56; }
+        @media (max-width: 430px) {
+            .chat-app { border-radius: 0; }
+            .chat-wrapper { max-width: 100%; }
+        }
+    </style>
+</head>
+<body>
+<div class="chat-wrapper">
+    <div class="toolbar">
+        <button class="btn-export" onclick="exportImage()">📷 导出长图</button>
+    </div>
+    <div class="chat-app" id="chatApp">
+        <div class="header">
+            <div class="header-title" id="chatTitle">Chat Simulator</div>
+            <div class="header-action" id="renameBtn" onclick="renameChat()">改名</div>
+        </div>
+        <div class="chat-area" id="chatArea">
+            <div class="timestamp" id="timeDisplay"></div>
+        </div>
+        <div class="input-area">
+            <div class="input-wrapper">
+                <input type="text" class="message-input" id="messageInput" placeholder="说点什么…" autocomplete="off">
+            </div>
+            <button class="send-btn" id="sendBtn">发送</button>
+        </div>
+    </div>
+</div>
+<input type="file" id="avatarUpload" accept="image/*" style="display:none">
+<script>
+// ===== Avatar click-to-upload =====
+var currentAvatarSpeaker = null;
+document.getElementById('avatarUpload').addEventListener('change', function(e) {
+    var file = e.target.files[0];
+    if (!file || !currentAvatarSpeaker) return;
+    var reader = new FileReader();
+    reader.onload = function(ev) {
+        var dataUrl = ev.target.result;
+        avatarMap[currentAvatarSpeaker] = dataUrl;
+        // Update all existing avatar img elements with matching title
+        document.querySelectorAll('.avatar').forEach(function(img) {
+            if (img.title === currentAvatarSpeaker) {
+                img.src = dataUrl;
+            }
+        });
+    };
+    reader.readAsDataURL(file);
+    this.value = ''; // allow re-selecting same file
+});
+
+function setupAvatarClicks() {
+    document.querySelectorAll('.avatar').forEach(function(img) {
+        img.addEventListener('click', function() {
+            currentAvatarSpeaker = this.title;
+            document.getElementById('avatarUpload').click();
+        });
+    });
+}
+
+// ===== SVG Avatar helper (encodeURIComponent, not btoa) =====
+function svgAvatar(ch, color) {
+    var svg = '<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">' +
+        '<rect width="40" height="40" rx="6" fill="' + color + '"/>' +
+        '<text x="20" y="26" text-anchor="middle" font-size="18" fill="white" font-family="sans-serif">' + ch + '</text></svg>';
+    return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+}
+
+// ===== INSERT YOUR DIALOGUES HERE =====
+// Format: {speaker: "名", text: "消息内容"}
+const dialogues = [];
+
+// ===== INSERT AVATARS HERE =====
+// Priority: local file path > SVG data URI > base64 (never base64 for large photos)
+// For photo images (巴菲特.jpeg): use plain file path, put file next to this HTML
+// For characters without photos: use svgAvatar('首字', '#color')
+const avatarMap = {};
+
+// ===== OPTIMIZED BATCH RENDER (no setTimeout) =====
+var chatArea = document.getElementById('chatArea');
+var timeDisplay = document.getElementById('timeDisplay');
+
+function loadDialogues() {
+    // Show current time
+    var now = new Date();
+    timeDisplay.textContent = String(now.getHours()).padStart(2,'0') + ':' + String(now.getMinutes()).padStart(2,'0');
+
+    // Group member list (for 3+ speakers)
+    var speakers = [];
+    dialogues.forEach(function(d) {
+        if (speakers.indexOf(d.speaker) === -1) speakers.push(d.speaker);
+    });
+    if (speakers.length > 2) {
+        var infoEl = document.createElement('div');
+        infoEl.className = 'group-info';
+        infoEl.textContent = speakers.join('、');
+        chatArea.appendChild(infoEl);
+    }
+
+    // Batch render all messages via DocumentFragment — instant, no animation delay
+    var fragment = document.createDocumentFragment();
+    dialogues.forEach(function(d) {
+        var row = document.createElement('div');
+        row.className = 'message-row';
+
+        var avatar = document.createElement('img');
+        avatar.src = avatarMap[d.speaker] || svgAvatar('?', '#ddd');
+        avatar.className = 'avatar';
+        avatar.title = d.speaker;
+
+        var contentDiv = document.createElement('div');
+        contentDiv.className = 'message-content';
+
+        var nameEl = document.createElement('div');
+        nameEl.className = 'sender-name';
+        nameEl.textContent = d.speaker;
+
+        var bubble = document.createElement('div');
+        bubble.className = 'message-bubble';
+        // Bubble contains ONLY message text — no speaker name
+        bubble.innerHTML = d.text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+
+        contentDiv.appendChild(nameEl);
+        contentDiv.appendChild(bubble);
+        row.appendChild(avatar);
+        row.appendChild(contentDiv);
+        fragment.appendChild(row);
+    });
+
+    chatArea.appendChild(fragment);
+    chatArea.scrollTop = chatArea.scrollHeight;
+    setupAvatarClicks(); // enable avatar upload after render
+}
+
+// ===== Export as long image =====
+function exportImage() {
+    var app = document.getElementById('chatApp');
+    html2canvas(app, {
+        scale: 2,
+        useCORS: true,
+        backgroundColor: '#ededed',
+        width: app.scrollWidth,
+        height: app.scrollHeight,
+        windowWidth: app.scrollWidth,
+        windowHeight: app.scrollHeight
+    }).then(function(canvas) {
+        var link = document.createElement('a');
+        link.download = 'chat_export.png';
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+    }).catch(function(err) {
+        alert('导出失败: ' + err.message);
+    });
+}
+
+// ===== Rename =====
+function renameChat() {
+    var newTitle = prompt('修改聊天标题', document.getElementById('chatTitle').textContent);
+    if (newTitle && newTitle.trim()) {
+        document.getElementById('chatTitle').textContent = newTitle.trim();
+    }
+}
+
+document.getElementById('sendBtn').addEventListener('click', function() {
+    var input = document.getElementById('messageInput');
+    var text = input.value.trim();
+    if (!text) return;
+    input.value = '';
+    input.focus();
+    setupAvatarClicks(); // avatars in new messages need click handlers
+});
+
+document.getElementById('messageInput').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') document.getElementById('sendBtn').click();
+});
+
+loadDialogues();
+</script>
+</body>
+</html>

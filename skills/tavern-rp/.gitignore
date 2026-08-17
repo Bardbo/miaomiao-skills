@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# Runtime data (user-specific, not part of the skill)
+cards/
+states/
+avatars/
+config.json
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,9 @@
+[
+  {
+    "id": 1,
+    "prompt": "生成巴菲特与芒格关于「赚钱的思维模式」的对话，10轮，场合：奥马哈Dairy Queen偶遇闲聊",
+    "expected": "有活人感的对话：打断抢话、语气词情绪、表达DNA一致、节奏变化、追问呼应",
+    "characters": ["巴菲特", "芒格"],
+    "persona_skills": ["buffett-perspective", "munger-perspective"]
+  }
+]
