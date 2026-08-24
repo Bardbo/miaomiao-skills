@@ -16,6 +16,7 @@
 | [talk](./skills/talk/) | 模拟沉浸式多角色对话，带人格管理与上下文压缩 | ✅ |
 | [smart-pick](./skills/smart-pick/) | 通用多方案权衡助手，支持动态权重生成与外部方案搜索 | ✅ |
 | [skill-curator](./skills/skill-curator/) | 综合技能管理与持续改进系统（9 维评估 + 优化引擎） | ✅ |
+| [apparel-lookbook-generator](./skills/apparel-lookbook-generator/) | 一张服装参考图生成 6 类风格统一的种草配图（穿搭 / 平铺 / 细节 / 场景 / 情侣 / 品牌故事），方法论迭代至 v9 | ✅ |
 
 ## 项目结构
 
@@ -31,7 +32,8 @@ miaomiao-skills/
     ├── tavern-rp/             角色扮演
     ├── talk/                  多角色对话
     ├── smart-pick/            方案权衡
-    └── skill-curator/         技能管理
+        ├── skill-curator/         技能管理
+        └── apparel-lookbook-generator/  服装种草图生成
 ```
 
 ## 使用方式

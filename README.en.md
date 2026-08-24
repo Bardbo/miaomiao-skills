@@ -16,6 +16,7 @@
 | [talk](./skills/talk/) | Simulate immersive multi-character dialogue with persona management and context compression | ✅ |
 | [smart-pick](./skills/smart-pick/) | Multi-option comparison assistant with dynamic weight generation and external search | ✅ |
 | [skill-curator](./skills/skill-curator/) | Comprehensive skill management and continuous improvement system (9-dimension evaluation + optimization engine) | ✅ |
+| [apparel-lookbook-generator](./skills/apparel-lookbook-generator/) | Turn one apparel reference photo into 6 coordinated social-commerce image types (outfit / flat lay / details / lifestyle / couple / brand story) — methodology iterated to v9 | ✅ |
 
 ## Structure
 
@@ -31,7 +32,8 @@ miaomiao-skills/
     ├── tavern-rp/             Role-playing
     ├── talk/                  Multi-character dialogue
     ├── smart-pick/            Decision assistant
-    └── skill-curator/         Skill management
+        ├── skill-curator/         Skill management
+        └── apparel-lookbook-generator/  Fashion lookbook imagery
 ```
 
 ## Usage
