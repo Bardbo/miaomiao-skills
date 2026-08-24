@@ -12,6 +12,8 @@
 
 Upload one apparel / item reference photo (or a text brief) and get a **coordinated, authentic-looking set of 6 social-commerce fashion image types** for Xiaohongshu-style content: outfit looks, flat lays, product details, lifestyle scenes, couple/friend pairings, and brand-story stills.
 
+**Runtime**: this skill is used inside **WorkBuddy** and relies on WorkBuddy's built-in ImageGen capability.
+
 ## What it does
 
 - **Image-anchored consistency**: every image is generated image-to-image from the same reference photo, so the clothes, colors, materials and model stay consistent across the set — no more "same shirt, different shirt in every picture".
@@ -29,27 +31,6 @@ Upload one apparel / item reference photo (or a text brief) and get a **coordina
 4. **Real human texture** — realism rules + negative constraints against AI-render feel.
 5. **Zero external dependency** — WorkBuddy's built-in ImageGen only; no third-party API or image-hosting account.
 6. **Built for Chinese creators** — Chinese models + Xiaohongshu ins-style visual language.
-
-## Iteration history (v5 → v9)
-
-| Version | Key change | Problem solved |
-|---------|-----------|----------------|
-| v5 | Film base look (Fujifilm X100V + Kodak Portra 400) | Establish the base tone |
-| v6 | Removed anatomy negatives; added e-commerce white-background mode | Fixed multi-hand/multi-leg artifacts; white background introduced new artifacts |
-| v7 | Per-category camera filters (Fuji X-T5 / Canon R6 / Sony A7R IV / Leica Q2 / GFX / Contax G2); positive artifact_guard | Fixed "mask hanging on neck", "shoes placed on table", "flat lay dropping items" |
-| v8 | Four engines (Product Analysis / Scene & Story Deduction / Pose Library / Self-Review Step 7.5); prompts derived dynamically from analysis | Fixed "holding shoes"; prompts now product-specific; auto review after generation |
-| v9 | 8 mandatory realism rules distilled from real reference samples; stronger avoid-block against AI-render feel | Fixed "overall AI-render / not good-looking" |
-
-The 8 v9 realism rules (mandatory on every generation):
-
-1. Real locations — no "white-wall studio".
-2. People are *doing* something, not posing stiffly.
-3. Film grain + natural light, always.
-4. Restrained palette (2–3 unified color families).
-5. Flat lays look *lived-in* (linen sheet wrinkles + coffee cup / book / magazine).
-6. Candid intimacy over symmetry (off-center, shallow depth, gaze off-frame).
-7. Real skin texture (no plastic / AI smoothing / glossy sheen).
-8. One consistent signature look across the whole set (like one photographer shot all 6).
 
 ## Who it's for
 
@@ -106,6 +87,3 @@ This skill is an original implementation — its name and mechanics are independ
 1. 松鼠AIGC's `pinterest-pin-image` skill and WeChat article (preview-before-generate, full item inventory, Pinterest content-type ratios / conversion funnel).
 2. The "Prompt Master" skill's field-structured prompt decomposition, realism enhancement and negative-constraint techniques.
 
-## Version
-
-v1.0.0 — first public release (internally iterated to v9, see history above); distributable package `apparel-lookbook-generator_v9.zip`

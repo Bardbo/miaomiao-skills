@@ -16,7 +16,7 @@
 | [talk](./skills/talk/) | Simulate immersive multi-character dialogue with persona management and context compression | ✅ |
 | [smart-pick](./skills/smart-pick/) | Multi-option comparison assistant with dynamic weight generation and external search | ✅ |
 | [skill-curator](./skills/skill-curator/) | Comprehensive skill management and continuous improvement system (9-dimension evaluation + optimization engine) | ✅ |
-| [apparel-lookbook-generator](./skills/apparel-lookbook-generator/) | Turn one apparel reference photo into 6 coordinated social-commerce image types (outfit / flat lay / details / lifestyle / couple / brand story) — methodology iterated to v9 | ✅ |
+| [apparel-lookbook-generator](./skills/apparel-lookbook-generator/) | For WorkBuddy: turn one apparel reference photo into 6 coordinated social-commerce fashion image types (outfit / flat lay / details / lifestyle / couple / brand story) | ✅ |
 
 ## Structure
 
