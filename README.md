@@ -17,6 +17,7 @@
 | [smart-pick](./skills/smart-pick/) | 通用多方案权衡助手，支持动态权重生成与外部方案搜索 | ✅ |
 | [skill-curator](./skills/skill-curator/) | 综合技能管理与持续改进系统（9 维评估 + 优化引擎） | ✅ |
 | [apparel-lookbook-generator](./skills/apparel-lookbook-generator/) | 在 WorkBuddy 中使用：一张服装参考图生成 6 类风格统一的穿搭种草图（穿搭 / 平铺 / 细节 / 场景 / 情侣 / 品牌故事） | ✅ |
+| [jev-survey-simulation](./skills/jev-survey-simulation/) | 基于 TypeSafe jev 决策模型的问卷批量模拟填写——按目标人群画像生成仿真作答数据（含三级兜底） | ✅ |
 
 ## 项目结构
 
@@ -33,7 +34,8 @@ miaomiao-skills/
     ├── talk/                  多角色对话
     ├── smart-pick/            方案权衡
         ├── skill-curator/         技能管理
-        └── apparel-lookbook-generator/  服装种草图生成
+        ├── apparel-lookbook-generator/  服装种草图生成
+        └── jev-survey-simulation/      问卷批量模拟填写（TypeSafe jev）
 ```
 
 ## 使用方式
