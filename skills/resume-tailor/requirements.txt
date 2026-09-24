@@ -1,0 +1,21 @@
+# resume-tailor 运行依赖
+# 用法：pip install -r requirements.txt
+
+# 必需 —— 母版/定制版 YAML 解析，所有脚本都依赖
+PyYAML>=6.0
+
+# 必需 —— docx 出片（scripts/export_docx.py，带文字层、ATS 可解析）
+python-docx>=1.1
+
+# ---------------------------------------------------------------
+# 可选：PDF 出片与「实测页数」
+#   scripts/export_pdf.py / measure_pages.js 用 node + playwright + chromium
+#   安装：
+#     npm install playwright
+#     npx playwright install chromium
+#   若不在默认位置，用 NODE_PATH 指向 node_modules 所在目录。
+#   不装也能用：docx 出片、估算版篇幅诊断都不依赖它。
+#
+# 可选：从 PDF 旧简历提取原文（Phase 0 材料导入）
+#   pip install pymupdf
+# ---------------------------------------------------------------

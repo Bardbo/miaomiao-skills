@@ -1,0 +1,64 @@
+tailored:
+  id: t-YYYYMMDD-公司-岗位
+  master_version: 1
+  created_at: YYYY-MM-DDTHH:MM
+
+target:
+  company: ""
+  role: ""
+  jd_snapshot:
+    source_url: ""
+    fetched_at: YYYY-MM-DDTHH:MM
+    text: |
+      JD 原文，逐字保存
+  analysis:
+    hard_requirements:           # 学历、年限等硬性门槛（影响教育段/画像，不进正文）
+      degree: ""                 # 本科 / 硕士 / 不限
+      years: null                # 数字；应届生为 0
+    p1_critical: []
+    p2_important: []
+    p3_nice: []
+
+company_brief:
+  fetched_at: YYYY-MM-DDTHH:MM
+  facts: []
+  inferences: []
+  failed_queries: []
+
+jd_crosscheck:                   # 可选：同类岗位 JD 横向对比（5-10 家）
+  compared_count: 0
+  common_requirements: []        # ≥70% JD 都提到 → 真硬性要求
+  distinctive: []                # <30% → 这家公司的个性化偏好
+
+selection:
+  # —— 白名单（只显示列出的，按给定顺序）——
+  experiences: []                # 空 = 全部保留（按时间倒序）
+  achievements: []               # 成就白名单：裁剪单条 bullet；空 = 不裁剪
+  # —— 黑名单（隐藏列出的，其余保留）——
+  hidden_experiences: []         # 按 id 隐藏整段经历
+  hidden_achievements: []        # 按 id 隐藏单条 bullet
+  hidden_skills: []              # 按 id 或 name 隐藏技能
+  hidden_publications: []        # 隐藏论文
+  hidden_patents: []             # 隐藏专利
+  hidden_honors: []              # 隐藏荣誉
+  hidden_ai: []                   # 隐藏 AI 原生能力
+  force_honors: false            # true = 强制显示荣誉段（投国企/体制内）
+  rationale: ""                  # 为什么这么选（可解释性，面试时能自圆其说）
+  # 注：白名单与黑名单可共存 —— 先按白名单裁，再按黑名单裁（见 render_resume.py / check_gates.py）
+
+rewrite_policy:
+  level: L2
+  length_pages: 1
+
+gaps: []
+
+proposals: []
+
+dismissed_proposals: []          # 被拒绝的回流提案存档，防止重复提议
+
+gate_report: {}
+
+output:
+  format: docx
+  path: ""
+  rendered_at: null

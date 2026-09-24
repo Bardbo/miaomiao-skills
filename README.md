@@ -18,6 +18,7 @@
 | [skill-curator](./skills/skill-curator/) | 综合技能管理与持续改进系统（9 维评估 + 优化引擎） | ✅ |
 | [apparel-lookbook-generator](./skills/apparel-lookbook-generator/) | 在 WorkBuddy 中使用：一张服装参考图生成 6 类风格统一的穿搭种草图（穿搭 / 平铺 / 细节 / 场景 / 情侣 / 品牌故事） | ✅ |
 | [jev-survey-simulation](./skills/jev-survey-simulation/) | 基于 TypeSafe jev 决策模型的问卷批量模拟填写——按目标人群画像生成仿真作答数据（含三级兜底） | ✅ |
+| [resume-tailor](./skills/resume-tailor/) | AI 简历优化与按岗定制——真实经历沉淀母版，按 JD 定制投递版，G1–G6 防造假闸门（只筛选、不编造） | ✅ |
 
 ## 项目结构
 
@@ -33,9 +34,10 @@ miaomiao-skills/
     ├── tavern-rp/             角色扮演
     ├── talk/                  多角色对话
     ├── smart-pick/            方案权衡
-        ├── skill-curator/         技能管理
-        ├── apparel-lookbook-generator/  服装种草图生成
-        └── jev-survey-simulation/      问卷批量模拟填写（TypeSafe jev）
+    ├── skill-curator/         技能管理
+    ├── apparel-lookbook-generator/  服装种草图生成
+    ├── jev-survey-simulation/      问卷批量模拟填写（TypeSafe jev）
+    └── resume-tailor/         简历优化与按岗定制
 ```
 
 ## 使用方式

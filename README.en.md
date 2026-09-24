@@ -18,6 +18,7 @@
 | [skill-curator](./skills/skill-curator/) | Comprehensive skill management and continuous improvement system (9-dimension evaluation + optimization engine) | ✅ |
 | [apparel-lookbook-generator](./skills/apparel-lookbook-generator/) | For WorkBuddy: turn one apparel reference photo into 6 coordinated social-commerce fashion image types (outfit / flat lay / details / lifestyle / couple / brand story) | ✅ |
 | [jev-survey-simulation](./skills/jev-survey-simulation/) | Batch survey response simulation with the TypeSafe jev decision model — profile-based simulated answers with a three-tier fallback | ✅ |
+| [resume-tailor](./skills/resume-tailor/) | AI resume optimization & JD tailoring — distill real experience into a master resume, derive role-specific versions, G1–G6 anti-fabrication gates (filter only, never fabricate) | ✅ |
 
 ## Structure
 
@@ -33,9 +34,10 @@ miaomiao-skills/
     ├── tavern-rp/             Role-playing
     ├── talk/                  Multi-character dialogue
     ├── smart-pick/            Decision assistant
-        ├── skill-curator/         Skill management
-        ├── apparel-lookbook-generator/  Fashion lookbook imagery
-        └── jev-survey-simulation/      Batch survey simulation (TypeSafe jev)
+    ├── skill-curator/         Skill management
+    ├── apparel-lookbook-generator/  Fashion lookbook imagery
+    ├── jev-survey-simulation/      Batch survey simulation (TypeSafe jev)
+    └── resume-tailor/         Resume optimization & tailoring
 ```
 
 ## Usage

@@ -1,0 +1,133 @@
+master:
+  version: 1
+  updated_at: YYYY-MM-DD
+  locale: zh-CN
+
+owner:
+  name: ""
+  contact:
+    phone: ""
+    email: ""
+    city: ""
+    links: []
+  profile:
+    photo: true
+    show_age: false
+    show_political_status: false
+
+preferences:
+  # 人群画像（写什么）：campus 校招 / junior 初级 / experienced 社招（默认）/ expert 资深
+  #   决定教育段位置、校园内容存废、技能收敛度与篇幅
+  profile: experienced
+  # 包装级别（怎么写）：sincere 真诚 / balanced 适度包装（默认）/ bold 酥化
+  #   只调表达方式，不能解锁 evidence 限制（pending 在 bold 下同样隐藏）
+  polish: balanced
+  # 求职意向默认不写进简历正文（载体是文件名 + 投递语）；内部转岗/猎头可置 true
+  show_intention: false
+  forbidden_terms: [赋能, 驱动, 闭环, 抓手, 沉淀, 打法, 组合拳, 从0到1, 深度参与, 全面负责]
+  tone: 克制
+  max_pages: 2
+
+# 摘要（个人简述）—— 社招最强去 low 手段，但默认关闭
+# 它是全篇唯一会新增概括性表述的段落：只能由已确认事实组成（校验器拦截 pending 与占位符），
+# 不写自我评价形容词。本人确认后 enabled: true 才进成稿。
+summary:
+  enabled: false
+  text: ""
+
+experiences:
+  - id: exp-001
+    type: work
+    org: ""
+    title: ""
+    period:
+      start: YYYY-MM
+      end: null
+      current: true
+    raw_input: |
+      用户原话，永不修改
+    achievements:
+      - id: exp-001-a1
+        action: ""
+        object: ""
+        method: ""
+        result:
+          metric: ""
+          value: ""
+          baseline: ""
+          scope: ""
+        evidence: pending                # verified | self_reported | pending | inferred
+        # ⚠ pending 分两种，判错会误杀简历里最硬的内容：
+        #   ① 存疑（事情成没成不确定）→ 隐藏
+        #   ② 未采集（事情确定，只缺编号/位次）→ 本人确认后转 self_reported
+        #   判据：删掉缺失字段后句子还成立吗？成立 → ②
+        needs_confirm: false            # ②类放行使使用：true = 已写入但细节待补
+        confirm_what: []                # 具体缺什么，如 [专利号, 授权日期, 发明人位次]
+        evidence_note: ""
+        strength: normal
+        tech_tags: []
+        difficulty: ""
+        rewrite_candidates: []
+    tech_tags: []
+    source_docs: []
+
+education:
+  - id: edu-001
+    school: ""
+    degree: ""
+    major: ""
+    period: { start: YYYY-MM, end: YYYY-MM }
+    highlights: []
+
+skills:
+  - id: sk-01
+    name: ""
+    category: "算法与建模"        # 按能力域（做什么），不按技术类型（是什么）
+    level: 熟悉                  # 了解 | 熟悉 | 熟练 | 精通 | 待确认
+                                 # **仅供内部收敛决策，成稿不显示**（「low 感」禁用清单）
+    stack: ""                    # 技术栈注脚：工具名只能出现在这里，渲染为「name（stack）」
+    kind: capability             # commodity 基线(不单列) | capability 交付 | leverage 杠杆
+                                 # 判断问句：装个工具 / 问一句 AI 就能获得吗？能 → commodity
+    status: active               # active 显示 / archived 默认不显示（换方向可复活）
+    evidence_refs: []
+    keep: false                  # true = JD 点名时强制显示（commodity 默认不单列）
+    needs_confirm: false         # true = 候选技能待本人确认，未确认不得转 active
+
+# AI 原生能力（leverage 层）—— v10 起渲染为「专业技能」的一个分组
+#   技能是「会什么」，这里是「怎么用工具放大产出」
+#   写法铁律：主句是能力 / 工作流，工具名只作附注
+ai_native: []
+#  - id: ai-001
+#    group: "AI 原生工作流"       # 分组名：AI 原生工作流 / 本地模型与生成
+#    capability: ""              # 必填。主句是能力，不是工具名
+#    detail: ""                  # 工具 / 场景，只作附注，渲染为「能力：工具」
+#    evidence: self_reported
+#    evidence_refs: []
+
+publications: []
+patents: []
+honors: []
+#  - id: hon-001
+#    name: ""
+#    period: ""
+#    student_era: false          # true = 校园内容，社招画像下自动过滤
+#    relevance: normal           # low = 无竞争性荣誉。过滤后若全是 low → 整段不渲染
+#    force: false                # true = 本人显式要求保留（投国企/体制内时）
+#    evidence: self_reported
+
+certifications: []
+#  - id: cert-001
+#    name: ""                    # 完整名称，含专业方向
+#    issuer: ""
+#    level: 中级
+#    date: ""
+#    evidence: pending
+
+claim_ledger: []
+
+dismissed_proposals: []
+
+changelog:
+  - version: 1
+    date: YYYY-MM-DD
+    changes: ["初始化母版"]
